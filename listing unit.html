@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Katalog Properti | SDM PRO</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        @media (min-width: 1024px) {
+            .dropdown:hover .dropdown-menu { display: block; }
+        }
+        .card-shadow { box-shadow: 0 10px 30px -5px rgba(30, 41, 59, 0.05); }
+        .card-shadow:hover { 
+            box-shadow: 0 25px 50px -12px rgba(249, 115, 22, 0.15);
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900 flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="text-2xl font-bold text-slate-800 tracking-tighter">
+                SDM <span class="text-orange-600">PRO.</span>
+            </div>
+
+            <div class="hidden lg:flex space-x-10 font-medium text-slate-600 text-sm items-center">
+                <div class="relative dropdown group">
+                    <button class="flex items-center gap-1 hover:text-orange-600 transition py-2 uppercase tracking-wider font-bold text-slate-900 text-[12px]">
+                        Perumahan Subsidi <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-xl rounded-xl border border-slate-100 w-56 mt-0 py-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-slate-50 hover:text-orange-600 transition">Kemilau Mawang Lake</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-slate-50 hover:text-orange-600 transition">Aqila Residence 2</a>
+                        <a href="#" class="block px-4 py-2 hover:bg-slate-50 hover:text-orange-600 transition">Almeera Residence</a>
+                    </div>
+                </div>
+
+                <div class="relative dropdown group">
+                    <button class="flex items-center gap-1 hover:text-orange-600 transition py-2 uppercase tracking-wider font-bold text-slate-900 text-[12px]">
+                        Tanah <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </button>
+                    <div class="dropdown-menu absolute hidden bg-white shadow-xl rounded-xl border border-slate-100 w-40 mt-0 py-2">
+                        <a href="#" class="block px-4 py-2 hover:bg-slate-50 hover:text-orange-600 transition">Kavling</a>
+                    </div>
+                </div>
+
+                <a href="#" class="hover:text-orange-600 transition uppercase tracking-wider font-bold text-slate-900 text-[12px]">Perumahan Komersil</a>
+                <a href="#" class="hover:text-orange-600 transition uppercase tracking-wider font-bold text-slate-900 text-[12px]">KPR</a>
+            </div>
+
+            <div class="hidden lg:block">
+                <a href="https://wa.me/628123456789" class="bg-slate-900 text-white px-6 py-2.5 rounded-full font-bold hover:bg-orange-600 transition text-sm">Konsultasi Gratis</a>
+            </div>
+
+            <button class="lg:hidden text-slate-800 p-2" onclick="toggleMenu()">
+                <svg id="menu-icon" class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </div>
+
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-t border-slate-100 px-6 py-8 space-y-6 absolute w-full left-0 shadow-2xl h-screen overflow-y-auto">
+            <div class="space-y-4">
+                <p class="text-[10px] font-black text-orange-600 uppercase tracking-[0.2em]">Perumahan Subsidi</p>
+                <div class="flex flex-col space-y-3 pl-2">
+                    <a href="#" class="text-lg font-bold text-slate-800">Kemilau Mawang Lake</a>
+                    <a href="#" class="text-lg font-bold text-slate-800">Aqila Residence 2</a>
+                    <a href="#" class="text-lg font-bold text-slate-800">Almeera Residence</a>
+                </div>
+            </div>
+            <div class="space-y-4">
+                <p class="text-[10px] font-black text-orange-600 uppercase tracking-[0.2em]">Tanah</p>
+                <div class="flex flex-col space-y-3 pl-2">
+                    <a href="#" class="text-lg font-bold text-slate-800">Kavling</a>
+                </div>
+            </div>
+            <div class="flex flex-col space-y-6 pt-2">
+                <a href="#" class="text-lg font-bold text-slate-800 uppercase text-sm">Perumahan Komersil</a>
+                <a href="#" class="text-lg font-bold text-slate-800 uppercase text-sm">KPR</a>
+                <a href="https://wa.me/628123456789" class="bg-orange-600 text-white text-center py-4 rounded-2xl font-bold">Konsultasi Gratis</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-6 pt-32 pb-24 flex-grow">
+        <div class="mb-12 border-l-4 border-orange-600 pl-6">
+            <h1 class="text-4xl md:text-5xl font-black text-slate-900 mb-2 tracking-tight uppercase">Katalog Properti</h1>
+            <p class="text-slate-500">Menampilkan 9 unit pilihan terbaik untuk Anda.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-blue-900 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Subsidi</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 168 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Kemilau Mawang Lake</h3>
+                    <p class="text-slate-400 text-sm mb-6">Unit Tipe 36/72 - Gowa</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1582063283554-623ae22c6e38?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-blue-900 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Subsidi</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 165 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Aqila Residence 2</h3>
+                    <p class="text-slate-400 text-sm mb-6">Unit Tipe 36/60 - Maros</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-blue-900 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Subsidi</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 168 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Almeera Residence</h3>
+                    <p class="text-slate-400 text-sm mb-6">Unit Tipe 36/72 - Moncongloe</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-orange-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Komersil</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 1.2 M</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Scandinavian Loft</h3>
+                    <p class="text-slate-400 text-sm mb-6">Modern Living - Hertasning</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-emerald-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Tanah</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 250 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Kavling Puncak Indah</h3>
+                    <p class="text-slate-400 text-sm mb-6">Luas 120m² - Malino</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-orange-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Komersil</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 850 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Urban Minimalist</h3>
+                    <p class="text-slate-400 text-sm mb-6">Strategis - Daya, Makassar</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-blue-900 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase">Subsidi</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 168 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Kemilau Lake (Blok B)</h3>
+                    <p class="text-slate-400 text-sm mb-6">Unit Tipe 36/72 - Gowa</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-emerald-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Tanah</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 120 Jt</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Kavling Agrowisata</h3>
+                    <p class="text-slate-400 text-sm mb-6">Luas 100m² - Pucak Maros</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+            <div class="group bg-white rounded-[2rem] overflow-hidden border border-slate-100 card-shadow transition-all duration-500">
+                <div class="relative h-64 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&q=80&w=800" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-5 left-5 bg-orange-600 text-white text-[10px] font-bold px-4 py-1.5 rounded-full uppercase tracking-widest">Komersil</div>
+                    <div class="absolute bottom-4 right-4 bg-white/95 backdrop-blur px-4 py-2 rounded-xl shadow-md border border-slate-100 font-bold text-orange-600">Rp 2.1 M</div>
+                </div>
+                <div class="p-8">
+                    <h3 class="text-xl font-bold text-slate-800 mb-2">Sky Penthouse</h3>
+                    <p class="text-slate-400 text-sm mb-6">Luxury View - Pusat Kota</p>
+                    <button class="w-full bg-slate-100 group-hover:bg-orange-600 group-hover:text-white text-slate-800 py-3.5 rounded-xl font-bold transition-all duration-300">Lihat Detail</button>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="bg-slate-900 text-white pt-20 pb-10 px-6 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1">
+                <div class="text-3xl font-bold tracking-tighter mb-6">SDM <span class="text-orange-600">PRO.</span></div>
+                <p class="text-slate-400 text-sm leading-relaxed">Partner tepercaya dalam menemukan hunian urban terbaik. Kami mengkurasi properti dengan nilai investasi tinggi.</p>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Kategori</h4>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:text-orange-500 transition">Perumahan Subsidi</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Perumahan Komersil</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Tanah Kavling</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Simulasi KPR</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Bantuan</h4>
+                <ul class="space-y-4 text-slate-400 text-sm">
+                    <li><a href="#" class="hover:text-orange-500 transition">Hubungi Kami</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">FAQ</a></li>
+                    <li><a href="#" class="hover:text-orange-500 transition">Syarat & Ketentuan</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="text-white font-bold mb-6 uppercase text-xs tracking-widest">Kontak</h4>
+                <p class="text-slate-400 text-sm leading-relaxed mb-4">Jl. Urban Modern No. 45, Makassar<br>Indonesia</p>
+                <div class="flex gap-4">
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-600 transition"><span class="text-[10px] font-bold">IG</span></a>
+                    <a href="#" class="w-8 h-8 rounded-full bg-slate-800 flex items-center justify-center hover:bg-orange-600 transition"><span class="text-[10px] font-bold">WA</span></a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-500 text-[10px] uppercase tracking-widest">© 2026 SDM PRO. Seluruh Hak Cipta Dilindungi.</p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            } else {
+                menu.classList.add('hidden');
+                icon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>';
+            }
+        }
+    </script>
+</body>
+</html>
